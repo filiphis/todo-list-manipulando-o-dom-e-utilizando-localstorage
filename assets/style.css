@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+
 }
 
 :root {
@@ -7,8 +8,11 @@
 }
 
 body {
+    margin: 0;
+    padding: 0;
     font-family: 'Inter', sans-serif;
     color: #fff;
+    overflow-x: hidden;
 }
 
 h1 {
@@ -26,7 +30,8 @@ h1 {
 }
 
 .tasks {
-    width: 450px;
+    min-width: 450px;
+    max-width: 650px;
     min-height: 450px;
     background-color: #00AE76;
     border-radius: 1%;
@@ -34,6 +39,7 @@ h1 {
         -2px 2px 6px rgba(0, 0, 0, 0.2);
     padding: 0 2rem 2rem 2rem;
 }
+
 
 .addTask {
     display: flex;
@@ -78,15 +84,26 @@ h1 {
 
 .task {
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     align-items: center;
     list-style-type: none;
     font-size: 1.6rem;
     padding: 2rem;
     width: 100%;
     background-color: rgba(9, 158, 111, 0.9);
+    margin: 8px 0;
 }
 
-.taskDescription.taskAsComplete {
+.taskDescription {
+    flex-grow: 1;
+}
+
+
+.task.taskAsComplete .taskDescription{
     text-decoration: line-through;
+}
+
+.task.taskAsComplete .taskComplete{
+    background-color: rgba(204, 67, 72, 0.678);
+    color: #fff;
 }
